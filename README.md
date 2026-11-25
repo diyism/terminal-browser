@@ -4,6 +4,7 @@
 
     容器的 /dev/shm 太小(64MB), 导致载入大量js时报错net::ERR_INSUFFICIENT_RESOURCES,
     如果/run, /var, /tmp 等tmpfs足够大, 选一个替代:
+    $ mkdir -p /run/terminal-browser-shm
     $ apptainer exec --writable --mount type=bind,src=/run/terminal-browser-shm,dst=/dev/shm /home/user/debian-sandbox /opt/terminal-browser/bin/terminal-browser
 
     做成脚本:

@@ -1,3 +1,9 @@
+    在 docker 或 apptainer 容器内如何正常运行:
+    terminal宽度可能没有正确传入导致termnal-browser画面很小, 需要先:
+    $ stty rows 45 cols 180
+    容器的 /dev/shm 太小(64MB), 导致载入大量js时报错net::ERR_INSUFFICIENT_RESOURCES:
+    $ apptainer exec --writable --mount type=bind,src=/run/terminal-browser-shm,dst=/dev/shm /home/user/debian-sandbox /opt/terminal-browser/bin/terminal-browser
+    
 # terminal-browser
 
 

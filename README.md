@@ -1,6 +1,6 @@
     在 docker 或 apptainer 容器内如何正常运行:
     terminal宽度可能没有正确传入导致termnal-browser画面很小, 需要先:
-    $ stty rows 53 cols 104
+    $ stty rows 53 cols 211
 
     容器的 /dev/shm 太小(64MB), 导致载入大量js时报错net::ERR_INSUFFICIENT_RESOURCES,
     如果/run, /var, /tmp 等tmpfs足够大, 选一个替代:

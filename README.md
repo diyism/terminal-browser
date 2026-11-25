@@ -2,7 +2,8 @@
     terminal宽度可能没有正确传入导致termnal-browser画面很小, 需要先:
     $ stty rows 45 cols 180
 
-    容器的 /dev/shm 太小(64MB), 导致载入大量js时报错net::ERR_INSUFFICIENT_RESOURCES, 如果/run, /var, /tmp 等tmpfs足够大, 选一个替代:
+    容器的 /dev/shm 太小(64MB), 导致载入大量js时报错net::ERR_INSUFFICIENT_RESOURCES,
+    如果/run, /var, /tmp 等tmpfs足够大, 选一个替代:
     $ apptainer exec --writable --mount type=bind,src=/run/terminal-browser-shm,dst=/dev/shm /home/user/debian-sandbox /opt/terminal-browser/bin/terminal-browser
 
 ==================================================================

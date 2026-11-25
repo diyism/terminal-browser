@@ -6,6 +6,11 @@
     如果/run, /var, /tmp 等tmpfs足够大, 选一个替代:
     $ apptainer exec --writable --mount type=bind,src=/run/terminal-browser-shm,dst=/dev/shm /home/user/debian-sandbox /opt/terminal-browser/bin/terminal-browser
 
+    做成脚本:
+    $ echo 'apptainer exec --writable --mount type=bind,src=/run/terminal-browser-shm,dst=/dev/shm /home/user/debian-sandbox /opt/terminal-browser/bin/terminal-browser' > terminal-browser.sh
+    结束死掉的进程:
+    $ ./terminal-browser.sh shutdown
+
 ==================================================================
     
 # terminal-browser

@@ -8,7 +8,12 @@
     $ apptainer exec --writable --mount type=bind,src=/run/terminal-browser-shm,dst=/dev/shm /home/user/debian-sandbox /opt/terminal-browser/bin/terminal-browser
 
     做成脚本:
-    $ echo 'apptainer exec --writable --mount type=bind,src=/run/terminal-browser-shm,dst=/dev/shm /home/user/debian-sandbox /opt/terminal-browser/bin/terminal-browser "$@"' > terminal-browser.sh
+    $ echo 'stty rows 53 cols 211' >  terminal-browser.sh
+    $ echo 'mkdir -p /var/tmp' >>  terminal-browser.sh
+    $ echo 'mkdir -p /var/terminal-browser-shm' >>  terminal-browser.sh
+    $ echo 'apptainer exec --writable --mount type=bind,src=/run/terminal-browser-shm,dst=/dev/shm /home/user/debian-sandbox /opt/terminal-browser/bin/terminal-browser "$@"' >> terminal-browser.sh
+    $ chmod +x terminal-browser.sh
+    $ ./terminal-browser.sh
     结束死掉的进程:
     $ ./terminal-browser.sh shutdown
 

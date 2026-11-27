@@ -17,6 +17,9 @@
     结束死掉的进程:
     $ ./terminal-browser.sh shutdown
 
+    指定代理及user data dir:
+    $ TERMINAL_BROWSER_APPDATA="$PWD" graftcp --enable-dns --socks5 127.0.0.1:7897 terminal-browser open https://idx.google.com
+
 ==================================================================
     
 # terminal-browser

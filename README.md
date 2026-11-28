@@ -6,6 +6,7 @@
     如果/run, /var, /tmp 等tmpfs足够大, 选一个替代:
     $ mkdir -p /run/terminal-browser-shm
     $ apptainer exec --writable --mount type=bind,src=/run/terminal-browser-shm,dst=/dev/shm /home/user/debian-sandbox /opt/terminal-browser/bin/terminal-browser
+    注意没有用unshare --map-root-user 和 apptainer --fakeroot, 因为terminal-browser不让在root用户下运行
 
     做成脚本:
     $ echo 'stty rows 53 cols 211' >  terminal-browser.sh
